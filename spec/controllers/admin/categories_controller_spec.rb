@@ -16,6 +16,7 @@ describe Admin::CategoriesController do
     assert_response :redirect, :action => 'index'
   end
   
+
   describe "test_create" do 
      before(:each) do
       get :new
@@ -70,6 +71,8 @@ describe Admin::CategoriesController do
       assert_response :success
       assert_template 'destroy'      
     end
+    
+    
   end
 
   it "test_destroy with POST" do
@@ -82,5 +85,7 @@ describe Admin::CategoriesController do
 
     assert_raise(ActiveRecord::RecordNotFound) { Category.find(test_id) }
   end
+  
+ 
   
 end
